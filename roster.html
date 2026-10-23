@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>捜査員名簿 ｜ 수사 4과</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Shippori+Mincho:wght@700;800&family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap">
+    <div class="fs" role="group" aria-label="글자 크기">
+      <span>文字サイズ</span>
+      <button type="button" data-size="normal" aria-pressed="true">標準</button>
+      <button type="button" data-size="large" aria-pressed="false">拡大</button>
+    </div>
+    <div class="dial">緊急通報<b>110</b></div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="警視庁 捜査四課 홈">
+      <div class="emblem" aria-hidden="true"></div>
+      <div class="brand-name">警視庁</div>
+      <div class="brand-sep" aria-hidden="true"></div>
+      <div class="logo sm" role="img" aria-label="捜査四課"><div class="logo-word" aria-hidden="true"><div class="logo-half top"><span class="sh">捜査四課</span><span class="fg">捜査四課</span></div><div class="logo-half bot"><span class="sh">捜査四課</span><span class="fg">捜査四課</span></div><div class="logo-tape"><b>KEEP OUT ／ SID-04</b></div></div><div class="logo-sub" aria-hidden="true">TOKYO METROPOLITAN POLICE DEPT.</div></div>
+    </a>
+    <nav class="gnav" aria-label="주 메뉴">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="about.html">4課について</a></li>
+        <li><a href="roster.html" aria-current="page">捜査員名簿</a></li>
+        <li><a href="news.html">新着情報</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-head">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="crumb"><a href="index.html">ホーム</a><i>/</i>수사원 명부</div>
+      <h1>捜査員名簿</h1>
+      <p>수사 제4과 소속 형사와 다음 사건 파일입니다.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <section class="sec" style="grid-template-columns:1fr">
+        <div class="roster">
+          <article class="file">
+            <div class="file-photo" style="background-image:url(https://i.imgur.com/ChLbR9o.png)"></div>
+            <p class="file-id">04-AX-818</p>
+            <h3>아카바네 하야토</h3>
+            <p class="rom">赤羽 隼人 ／ AKABANE HAYATO</p>
+            <p class="desc">S급 체이서. 경부. 늘 웃고 있지만 기분이 좋은 건 아니다.</p>
+            <a class="open" href="hayato.html">파일 열기</a>
+          </article>
+          <article class="file">
+            <div class="file-photo" style="background-image:url(https://i.imgur.com/agVr4YO.png)"></div>
+            <p class="file-id">MPD ／ 001</p>
+            <h3>아리마 소이치로</h3>
+            <p class="rom">有馬 宗一郎 ／ ARIMA SOICHIRO</p>
+            <p class="desc">B급 핸들러. 경시. 수사 4과 반장이자 현장 지휘관.</p>
+            <span class="open" style="border-color:var(--line-2);color:var(--muted)">파일 준비 중</span>
+          </article>
+          <article class="file">
+            <div class="file-photo" style="background-image:url(https://i.imgur.com/8L87IQa.png)"></div>
+            <p class="file-id">MPD ／ 003</p>
+            <h3>하야미 렌지</h3>
+            <p class="rom">速水 蓮司 ／ HAYAMI RENJI</p>
+            <p class="desc">S급 체이서. 경부보. 수사 4과에서 제일 가벼운 남자.</p>
+            <span class="open" style="border-color:var(--line-2);color:var(--muted)">파일 준비 중</span>
+          </article>
+          <article class="file sealed">
+            <div class="file-photo" style="background-image:url(https://i.imgur.com/fPAHOiN.png)"><span class="tag">未公開</span></div>
+            <p class="file-id">NEXT CASE FILE</p>
+            <h3>사쿠마 류헤이</h3>
+            <p class="rom">佐久間 隆平 ／ SAKUMA RYUHEI</p>
+            <p class="desc">다음 사건 파일. 공개 준비 중입니다.</p>
+            <span class="open">공개 예정</span>
+          </article>
+        </div>
+    </section>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-brand">
+      <div class="emblem" aria-hidden="true"></div>
+      <div><b>警視庁 捜査第四課</b>본부 청사 지하 3층 ／ 내선 0404</div>
+    </div>
+    <div class="f-links">
+      <a href="index.html">홈</a>
+      <a href="about.html">4과 소개</a>
+      <a href="roster.html">수사원 명부</a>
+      <a href="news.html">새 소식</a>
+    </div>
+    <div class="f-bottom">
+      <span>본 사이트는 창작물이며 실제 경시청과는 관계가 없습니다.</span>
+      <span>© Special Investigation Division 04</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
