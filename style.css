@@ -1,0 +1,189 @@
+:root{
+  color-scheme:dark;
+  --ink:#080807;
+  --panel:#0e0d0b;
+  --line:#2b2a26;
+  --line-2:#4a4333;
+  --gold:#e3bf45;
+  --brass:#a88b3d;
+  --text:#d9dde1;
+  --sub:#a9a69e;
+  --muted:#76736b;
+  --navy:#0f1726;
+  --navy-line:#24324a;
+  --alert:#d0473f;
+  --serif:'Shippori Mincho','Noto Serif JP',serif;
+  --sans:'Noto Sans KR','Noto Sans JP',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+html.large{font-size:18px}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* ── 상단 유틸리티 바 ── */
+.util{border-bottom:1px solid var(--line);font-size:.72rem;color:var(--muted)}
+.util .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:36px}
+.util-r{display:flex;align-items:center;gap:14px}
+.fs{display:flex;align-items:center;gap:6px}
+.fs button{font:inherit;color:var(--sub);background:transparent;border:1px solid var(--line);border-radius:3px;padding:1px 8px;cursor:pointer}
+.fs button[aria-pressed="true"]{color:var(--ink);background:var(--gold);border-color:var(--gold)}
+.dial{color:var(--alert);font-weight:700}
+
+/* ── 헤더 ── */
+header.site{padding:20px 0 18px}
+header.site .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.emblem{flex:0 0 48px;height:48px;border-radius:50%;border:2px solid var(--brass);
+  background:radial-gradient(circle,var(--gold) 0 22%,transparent 24%),repeating-conic-gradient(var(--brass) 0 8deg,transparent 8deg 24deg)}
+.brand-ja{font-family:var(--serif);font-size:1.9rem;font-weight:800;letter-spacing:.3em;line-height:1.1;color:#ecebe7}
+.brand-en{font-size:.68rem;letter-spacing:.14em;color:var(--muted);margin-top:4px}
+.brand-div{margin-left:4px;padding-left:16px;border-left:1px solid var(--line-2)}
+.brand-div b{display:block;font-family:var(--serif);font-size:1rem;color:var(--gold);letter-spacing:.15em}
+.brand-div span{font-size:.72rem;color:var(--sub)}
+.contact{margin-left:auto;display:flex;gap:8px}
+.contact a{font-size:.78rem;padding:8px 14px;border:1px solid var(--line-2);border-radius:4px;color:var(--sub);background:var(--panel)}
+.contact a.hot{border-color:var(--brass);color:var(--gold)}
+
+/* ── 글로벌 내비 (경시청 홈페이지 남색 띠) ── */
+nav.gnav{position:sticky;top:0;z-index:20;background:var(--navy);border-top:1px solid var(--navy-line);border-bottom:2px solid var(--brass)}
+nav.gnav ul{list-style:none;display:flex;overflow-x:auto;scrollbar-width:none}
+nav.gnav ul::-webkit-scrollbar{display:none}
+nav.gnav li{flex:1 0 auto}
+nav.gnav a{display:block;text-align:center;padding:12px 18px;font-size:.86rem;font-weight:500;color:#c9cfd9;border-right:1px solid var(--navy-line);white-space:nowrap}
+nav.gnav li:first-child a{border-left:1px solid var(--navy-line)}
+nav.gnav a:hover{background:#16213a;color:var(--gold)}
+nav.gnav a[aria-current="page"]{background:#16213a;color:var(--gold);box-shadow:inset 0 -3px 0 var(--gold)}
+nav.gnav a small{display:block;font-size:.6rem;letter-spacing:.12em;color:#6c7891;font-weight:400}
+
+/* ── 긴급 공지 ── */
+.alert{margin:22px 0 0;border:1px solid #5a2422;background:#140b0a;border-radius:6px;display:flex;align-items:stretch;overflow:hidden}
+.alert-tag{flex:0 0 auto;display:flex;align-items:center;gap:8px;padding:12px 16px;background:var(--alert);color:#fff;font-weight:700;font-size:.82rem;letter-spacing:.08em}
+.alert-tag i{width:8px;height:8px;border-radius:50%;background:#fff;animation:blink 1.6s steps(2,start) infinite}
+.alert p{padding:12px 16px;font-size:.88rem;color:#e6c9c6}
+.alert p b{color:#fff;font-weight:700}
+@keyframes blink{to{visibility:hidden}}
+
+/* ── 히어로 ── */
+.hero{margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
+.hero-title{display:flex;gap:18px;padding:28px 26px;border-right:1px dashed var(--line-2);background:linear-gradient(180deg,#14120d,#0b0b0a)}
+.vert{writing-mode:vertical-rl;font-family:var(--serif);font-weight:800;font-size:4.2rem;line-height:1;letter-spacing:.12em;color:#efeee9}
+.vert-sub{writing-mode:vertical-rl;font-family:var(--serif);font-size:.95rem;letter-spacing:.35em;color:var(--brass);padding-top:6px}
+.hero-photo{position:relative;min-height:440px;background:#0a0a09 url(https://i.imgur.com/fPAHOiN.png) center 28%/cover no-repeat}
+.hero-photo::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 5px)}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,#000 0%,rgba(0,0,0,.82) 28%,rgba(0,0,0,.2) 65%,transparent)}
+.sweep{position:absolute;left:0;right:0;top:-40px;height:40px;z-index:2;background:linear-gradient(transparent,rgba(227,191,69,.25) 85%,var(--gold));animation:sweep 2.2s .4s cubic-bezier(.6,0,.4,1) both}
+@keyframes sweep{from{top:-40px;opacity:1}90%{opacity:1}to{top:100%;opacity:0}}
+.hero-copy{position:absolute;z-index:3;left:28px;right:28px;bottom:26px}
+.hero-copy .lead{font-family:var(--serif);font-size:1.55rem;font-weight:700;line-height:1.45;color:#f1efe8}
+.hero-copy .lead-sub{margin-top:8px;font-size:.88rem;color:var(--sub);max-width:46ch}
+.stamp{position:absolute;z-index:3;top:18px;right:18px;padding:4px 12px;border:2px solid var(--alert);color:var(--alert);font-family:var(--serif);font-weight:800;font-size:.95rem;letter-spacing:.3em;transform:rotate(6deg);border-radius:4px;background:rgba(10,10,9,.6)}
+
+/* ── 섹션 공통 ── */
+section{margin-top:56px}
+.sec-head{display:flex;align-items:baseline;gap:14px;padding-bottom:12px;margin-bottom:22px;border-bottom:1px solid var(--line)}
+.sec-head h2{font-family:var(--serif);font-size:1.5rem;font-weight:800;letter-spacing:.12em;color:#ecebe7;position:relative;padding-left:16px}
+.sec-head h2::before{content:"";position:absolute;left:0;top:.2em;bottom:.2em;width:4px;background:var(--gold)}
+.sec-head span{font-size:.82rem;color:var(--muted)}
+
+/* ── 4과에 대하여 ── */
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:28px}
+.about-text p{font-size:.95rem;color:var(--sub);max-width:58ch}
+.about-text p+p{margin-top:12px}
+.about-text strong{color:var(--text);font-weight:500}
+.facts{border:1px solid var(--line);border-radius:8px;background:var(--panel);overflow:hidden}
+.facts div{display:grid;grid-template-columns:7em 1fr;gap:10px;padding:12px 16px;font-size:.86rem}
+.facts div+div{border-top:1px dashed var(--line)}
+.facts dt{color:var(--brass);font-family:var(--serif);font-weight:700;letter-spacing:.1em}
+.facts dd{color:var(--text)}
+
+/* ── 수사원 명부 ── */
+.roster{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.file{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.file-photo{position:relative;aspect-ratio:3/4;background:#121110 center 25%/cover no-repeat}
+.file-photo.empty{background:
+  radial-gradient(circle at 50% 38%,#2a2822 0 17%,transparent 17.5%),
+  radial-gradient(ellipse at 50% 100%,#2a2822 0 42%,transparent 42.5%),#121110}
+.file-photo::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.14) 0 1px,transparent 1px 5px)}
+.file-no{position:absolute;z-index:2;left:8px;top:8px;font-size:.66rem;letter-spacing:.08em;padding:2px 8px;border-radius:3px;background:rgba(8,8,7,.85);border:1px solid var(--line-2);color:var(--gold)}
+.file-body{flex:1;display:flex;flex-direction:column;padding:14px 14px 16px;border-top:2px solid var(--brass)}
+.file-role{font-size:.7rem;color:var(--muted)}
+.file h3{font-size:1.12rem;font-weight:700;color:#efeee9;margin-top:2px}
+.file .rom{font-size:.68rem;letter-spacing:.12em;color:var(--brass)}
+.file .desc{margin-top:8px;font-size:.82rem;color:var(--sub);flex:1}
+.file .desc.todo{color:var(--muted);font-style:italic}
+.file .open{margin-top:12px;align-self:flex-start;font-size:.78rem;padding:6px 12px;border:1px solid var(--brass);border-radius:4px;color:var(--gold)}
+.file .open:hover{background:var(--gold);color:var(--ink)}
+.file.sealed .file-photo{filter:grayscale(.6) brightness(.7)}
+.file.sealed .open{border-color:var(--line-2);color:var(--muted);pointer-events:none}
+.seal{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-8deg);padding:4px 14px;border:2px solid var(--alert);color:var(--alert);font-family:var(--serif);font-weight:800;letter-spacing:.3em;background:rgba(8,8,7,.7);white-space:nowrap}
+
+/* ── 새 소식 (경시청 新着情報 목록) ── */
+.news{list-style:none;border-top:1px solid var(--line)}
+.news li{display:grid;grid-template-columns:7.5em 6em 1fr;align-items:baseline;gap:14px;padding:14px 4px;border-bottom:1px solid var(--line);font-size:.9rem}
+.news time{color:var(--muted);font-size:.82rem;font-variant-numeric:tabular-nums}
+.cat{justify-self:start;font-size:.7rem;padding:1px 8px;border-radius:3px;border:1px solid var(--line-2);color:var(--sub)}
+.cat.new{border-color:var(--brass);color:var(--gold)}
+.cat.warn{border-color:#5a2422;color:var(--alert)}
+.news a:hover{color:var(--gold)}
+
+/* ── 푸터 ── */
+footer{margin-top:72px;background:var(--navy);border-top:2px solid var(--brass);padding:32px 0 26px;font-size:.8rem;color:#8d97aa}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
+.f-brand{display:flex;gap:12px;align-items:center}
+.f-brand .emblem{flex-basis:36px;height:36px}
+.f-brand b{display:block;font-family:var(--serif);font-size:1.05rem;color:#dfe3ea;letter-spacing:.2em}
+.f-links{display:flex;flex-wrap:wrap;gap:6px 18px}
+.f-links a:hover{color:var(--gold)}
+.f-bottom{flex-basis:100%;padding-top:16px;border-top:1px solid var(--navy-line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:.72rem;color:#66718a}
+
+/* ── 하위 페이지 머리 (경시청 브레드크럼 + 페이지 제목) ── */
+.crumb{margin-top:18px;font-size:.76rem;color:var(--muted)}
+.crumb a:hover{color:var(--gold)}
+.crumb span{margin:0 6px;color:var(--line-2)}
+.page-head{margin-top:14px;padding:26px 24px;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 5px),linear-gradient(135deg,#15130e,#0b0b0a)}
+.page-head h1{font-family:var(--serif);font-size:2rem;font-weight:800;letter-spacing:.14em;color:#efeee9;line-height:1.3}
+.page-head p{margin-top:6px;font-size:.9rem;color:var(--sub)}
+.page-head + section{margin-top:36px}
+
+/* ── 홈 바로가기 타일 ── */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tile{display:block;padding:20px 20px 18px;border:1px solid var(--line);border-radius:10px;background:var(--panel);position:relative}
+.tile:hover{border-color:var(--brass)}
+.tile b{display:block;font-family:var(--serif);font-size:1.2rem;letter-spacing:.12em;color:#ecebe7}
+.tile span{display:block;margin-top:4px;font-size:.84rem;color:var(--sub)}
+.tile em{position:absolute;top:18px;right:18px;font-style:normal;font-size:.7rem;color:var(--brass)}
+.more{display:inline-block;margin-top:14px;font-size:.82rem;color:var(--gold);border-bottom:1px solid var(--brass)}
+
+/* ── 반응형 ── */
+@media (max-width:880px){
+  .roster{grid-template-columns:repeat(2,1fr)}
+  .tiles{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .brand-ja{font-size:1.5rem}
+  .brand-div{margin-left:0;padding-left:0;border-left:0;flex-basis:100%}
+  .contact{margin-left:0}
+  .util-l{display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-title{border-right:0;border-bottom:1px dashed var(--line-2);padding:20px}
+  .vert{writing-mode:horizontal-tb;font-size:2.6rem}
+  .vert-sub{writing-mode:horizontal-tb;padding-top:0;letter-spacing:.2em}
+  .hero-title{flex-direction:column;gap:6px}
+  .hero-photo{min-height:380px}
+  .hero-copy{left:18px;right:18px;bottom:18px}
+  .hero-copy .lead{font-size:1.25rem}
+  .alert{flex-direction:column}
+  .news li{grid-template-columns:auto 1fr;gap:4px 12px}
+  .news li a{grid-column:1/-1}
+  .page-head h1{font-size:1.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .sweep{display:none}
+  .alert-tag i{animation:none}
+  html{scroll-behavior:auto}
+}
